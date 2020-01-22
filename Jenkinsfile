@@ -16,7 +16,7 @@ pipeline
    
   stage('Deploy Application'){
    steps{
-   bat 'mvn package deploy -DmuleDeploy -Denv=dev'
+   bat 'mvn package deploy -DmuleDeploy -Denv=dev -nsu -DskipMunitTests'
    }
    }
  
