@@ -22,7 +22,7 @@ pipeline
  
   stage('Testing Application'){
    steps{
-   bat 'C:\\Users\\smahadevanpillai\\AppData\\Roaming\\npm\\newman run C:\\Users\\smahadevanpillai\\Muleapi-Collection.postman_collection.json --disable-unicode'
+   bat 'C:\\Users\\smahadevanpillai\\AppData\\Roaming\\npm\\newman run C:\\Users\\smahadevanpillai\\Muleapi-Collection.postman_collection1.json --disable-unicode'
    }
    }
   }
