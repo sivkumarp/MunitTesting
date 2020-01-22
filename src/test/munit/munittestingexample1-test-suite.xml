@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="munittestingexample1-test-suite.xml" />
+	<munit:test name="munittestingexample1-test-suite-munittestingexample1FlowTest" doc:id="dbd83f6c-0ec7-4f17-87a3-01baa9a04c5f" description="Test">
+		<munit:execution >
+			<munit:set-event doc:name="Set Event" doc:id="9f600a76-4bba-4a09-93eb-45ed757be249" >
+				<munit:attributes value="#[{uriParams:{Region:'Asia',City:'Kolkata'}}]" />
+			</munit:set-event>
+			<flow-ref doc:name="Flow-ref to munittestingexample1Flow" doc:id="3101f18e-ac5c-4b3c-92a8-94d8a8bdfd4e" name="munittestingexample1Flow"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-that doc:name="Assert that" doc:id="5e29aca6-6d7a-4151-9060-c6a824fb4a5c" expression="#[payload]" is="#[MunitTools::allOf([MunitTools::notNullValue(),MunitTools::withMediaType('application/json'),MunitTools::withEncoding('UTF-8')])]" message="Payload is null"/>
+		</munit:validation>
+	</munit:test>
+
+
+</mule>
