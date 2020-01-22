@@ -5,11 +5,12 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
 	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="752b0f05-614c-4869-99fe-c40724dc3112" >
-		<http:listener-connection host="0.0.0.0" port="9002" />
+		<http:listener-connection host="0.0.0.0" port="${http.port}" />
 	</http:listener-config>
 	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="7d5c4578-5ebc-4062-8a5f-21cc201a05d5" basePath="/api/timezone/" >
 		<http:request-connection host="worldtimeapi.org" />
 	</http:request-config>
+	<configuration-properties doc:name="Configuration properties" doc:id="6a6349da-819e-4d5e-986e-8dc9241f205b" file="${env}.yaml" />
 	<flow name="munittestingexample1Flow" doc:id="ed91dbdc-e223-4599-b76f-26c9db53b787" >
 		<http:listener doc:name="Listener" doc:id="112e9ef8-ae23-4cda-86c1-80951ad2d5bf" config-ref="HTTP_Listener_config" path="TimeZone/{Region}/{City}"/>
 		<http:request method="GET" doc:name="Request" doc:id="8a85cee1-3eee-47d5-bcd1-61598226d12d" config-ref="HTTP_Request_configuration" path="/{Region}/{City}">
