@@ -53,6 +53,9 @@
                     </execution>
                 </executions>
                 <configuration>
+                <dynamicPorts>
+                   <dynamicPort>a.dynamic.port</dynamicPort>
+                </dynamicPorts>
                     <coverage>
                         <runCoverage>true</runCoverage>
                         <formats>
