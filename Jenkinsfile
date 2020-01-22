@@ -4,19 +4,19 @@ pipeline
  stages{
   stage('Build Application'){
    steps{
-   bat 'mvn clean install -Dmule.env=test'
+   bat 'mvn clean install -Denv=test'
    }
    }
  
  stage('Munit Testing'){
    steps{
-   bat 'mvn test -Dmule.env=test'
+   bat 'mvn test -Denv=test'
    }
    }
    
   stage('Deploy Application'){
    steps{
-   bat 'mvn package deploy -DmuleDeploy -Dmule.env=dev'
+   bat 'mvn package deploy -DmuleDeploy -Denv=dev'
    }
    }
  
