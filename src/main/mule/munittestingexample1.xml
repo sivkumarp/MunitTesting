@@ -22,6 +22,6 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 }]]]></http:uri-params>
 		</http:request>
 		<logger level="INFO" doc:name="Logger" doc:id="262c04e2-8631-43ef-b5fa-86c009e9aa91" message="#[payload]"/>
-		<logger level="INFO" doc:name="Logger" doc:id="769200a8-248c-4152-b70d-9a0860fbae77" message="End of Run"/>
+		<logger level="INFO" doc:name="Logger" doc:id="769200a8-248c-4152-b70d-9a0860fbae77" message="End of Flow"/>
 	</flow>
 </mule>
