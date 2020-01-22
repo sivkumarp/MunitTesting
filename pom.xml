@@ -35,6 +35,9 @@
 						<objectStoreV2>true</objectStoreV2>
 						<workers>1</workers>
 						<workerType>Micro</workerType>
+						<properties>
+                         <env>${env}</env>
+                        </properties>
 					</cloudHubDeployment>
 				</configuration>
 			</plugin>
