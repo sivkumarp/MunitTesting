@@ -53,10 +53,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                <dynamicPorts>
-                   <dynamicPort>a.dynamic.port</dynamicPort>
-                </dynamicPorts>
-                    <coverage>
+                     <coverage>
                         <runCoverage>true</runCoverage>
                         <formats>
                             <format>html</format>
